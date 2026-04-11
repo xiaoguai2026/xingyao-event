@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "科技产品发布会",
+    "category": "发布会",
+    "description": "为知名科技公司打造的沉浸式产品发布体验",
+    "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800"
+  },
+  {
+    "id": 2,
+    "title": "城市音乐节",
+    "category": "音乐节",
+    "description": "万人规模的城市文化音乐盛典",
+    "image": "https://images.unsplash.com/photo-1459749411177-047381bb3ece?w=800"
+  },
+  {
+    "id": 3,
+    "title": "购物中心开业盛典",
+    "category": "开业庆典",
+    "description": "大型商业综合体开幕庆典活动",
+    "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800"
+  },
+  {
+    "id": 4,
+    "title": "企业年会",
+    "category": "年会",
+    "description": "年度企业盛典与团队表彰大会",
+    "image": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800"
+  }
+]

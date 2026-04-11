@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星耀活动策划 - 您值得信赖的全方位活动合作伙伴</title>
+    <meta name="description" content="专注活动策划执行10年，提供会议活动、展览展示、庆典活动等一站式活动解决方案">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #153E76;
+            --primary-dark: #0d2a52;
+            --primary-light: #1e5294;
+            --accent: #153E76;
+            --accent-light: #1e5294;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --text-muted: #999999;
+            --bg-dark: #0a1628;
+            --bg-card: #153E76;
+            --bg-light: #1a1a2e;
+            --border: rgba(255,255,255,0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .nav-phone {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+        
+        .nav-cta {
+            background: #ffffff;
+            color: var(--primary);
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--text-secondary);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 8rem 2rem 4rem;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(233, 69, 96, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 40%),
+                var(--bg-dark);
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 span {
+            color: #ffffff;
+            font-weight: 900;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: #ffffff;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--text-secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(21, 62, 118, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: #ffffff;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        /* Services */
+        .services {
+            background: var(--bg-light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(21, 62, 118, 0.2);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .service-card p {
+            color: var(--text-secondary);
+        }
+        
+        /* Cases */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .case-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        
+        .case-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+        }
+        
+        .case-content {
+            padding: 1.5rem;
+        }
+        
+        .case-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .case-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .case-category {
+            display: inline-block;
+            background: rgba(21, 62, 118, 0.3);
+            color: #ffffff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            background: var(--primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .feature-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 4rem 2rem 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #ffffff;
+        }
+        
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-phone {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 4rem 1.5rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">星</div>
+                <span>星耀活动策划</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#cases">案例</a></li>
+                <li><a href="#news">行业快讯</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+            
+            <div class="nav-right">
+                <a href="tel:400-888-8888" class="nav-phone">400-888-8888</a>
+                <a href="#contact" class="nav-cta">立即咨询</a>
+                <button class="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>星耀活动策划 - 您值得信赖的<br><span>全方位活动合作伙伴</span></h1>
+            <p>从创意策划到完美落地，我们提供一站式活动解决方案，确保您的每一次亮相都令人难忘。</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">查看我们的服务</a>
+                <a href="#contact" class="btn-secondary">立即咨询</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="section-header">
+            <h2>我们的核心服务</h2>
+            <p>专业的活动策划与执行，为您的每一个重要时刻保驾护航</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📅</div>
+                <h3>会议活动</h3>
+                <p>专业的会议策划与执行服务，从场地布置到流程把控，确保会议高效圆满。</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏛️</div>
+                <h3>展览展示</h3>
+                <p>创意展览设计与搭建，打造沉浸式展示空间，让您的品牌脱颖而出。</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🎉</div>
+                <h3>庆典活动</h3>
+                <p>难忘的庆典活动策划，从开业典礼到周年庆典，创造美好回忆。</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🎭</div>
+                <h3>演出演艺</h3>
+                <p>专业的演出策划与执行，提供舞台搭建、灯光音响、节目编排等全套服务。</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>企业年会</h3>
+                <p>年度企业盛典与团队表彰大会，增强团队凝聚力，展现企业文化。</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🎪</div>
+                <h3>主题活动</h3>
+                <p>创意主题活动策划，从概念设计到现场执行，打造独特的活动体验。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases Section -->
+    <section class="section" id="cases">
+        <div class="section-header">
+            <h2>精彩案例回顾</h2>
+            <p>每一次成功的活动，都是我们专业能力的最好证明</p>
+        </div>
+        
+        <div class="cases-grid" id="cases-container">
+            <!-- 案例将通过 JS 动态加载 -->
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <button class="btn-primary" onclick="loadMoreCases()">查看更多案例</button>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section why-us" id="about">
+        <div class="section-header">
+            <h2>为什么选择星耀？</h2>
+            <p>我们的核心竞争力，让您的活动无忧举办</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">👥</div>
+                <h3>专业团队</h3>
+                <p>拥有10年以上行业经验的资深策划与执行团队</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <h3>一站式服务</h3>
+                <p>从策划到执行，从设计到落地，全程无忧服务</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">💡</div>
+                <h3>创意无限</h3>
+                <p>紧跟行业趋势，为您的活动注入新鲜创意</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">✅</div>
+                <h3>品质保证</h3>
+                <p>严格的质量把控，确保每个细节都完美呈现</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-header">
+            <h2>联系我们</h2>
+            <p>告诉我们您的需求，我们将为您提供专业的活动方案</p>
+        </div>
+        
+        <form class="contact-form" id="contact-form">
+            <div class="form-group">
+                <label>您的姓名 *</label>
+                <input type="text" name="name" required placeholder="请输入您的姓名">
+            </div>
+            
+            <div class="form-group">
+                <label>联系电话 *</label>
+                <input type="tel" name="phone" required placeholder="请输入您的联系电话">
+            </div>
+            
+            <div class="form-group">
+                <label>活动类型</label>
+                <select name="type">
+                    <option value="">请选择活动类型</option>
+                    <option value="会议">会议活动</option>
+                    <option value="展览">展览展示</option>
+                    <option value="庆典">庆典活动</option>
+                    <option value="年会">企业年会</option>
+                    <option value="演出">演出演艺</option>
+                    <option value="其他">其他活动</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>需求描述</label>
+                <textarea name="message" placeholder="请描述您的活动需求，包括时间、地点、预算、人数等信息..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn-primary" style="width: 100%;">提交咨询</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>星耀活动策划</h4>
+                <p>专注活动策划执行10年<br>让每一场活动都成为经典</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>服务项目</h4>
+                <p><a href="#services">会议活动</a></p>
+                <p><a href="#services">展览展示</a></p>
+                <p><a href="#services">庆典活动</a></p>
+                <p><a href="#services">企业年会</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <p>电话：400-888-8888</p>
+                <p>邮箱：contact@xingyao.com</p>
+                <p>地址：北京市朝阳区xxx大厦</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 星耀活动策划. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // GitHub 配置
+        const GITHUB_CONFIG = {
+            owner: 'xiaoguai2026',
+            repo: 'xingyao-event',
+            branch: 'main',
+            dataPath: 'data/cases.json'
+        };
+
+        // 默认案例数据
+        const defaultCases = [
+            {
+                id: 1,
+                title: '科技产品发布会',
+                category: '发布会',
+                description: '为知名科技公司打造的沉浸式产品发布体验',
+                image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800'
+            },
+            {
+                id: 2,
+                title: '城市音乐节',
+                category: '音乐节',
+                description: '万人规模的城市文化音乐盛典',
+                image: 'https://images.unsplash.com/photo-1459749411177-047381bb3ece?w=800'
+            },
+            {
+                id: 3,
+                title: '购物中心开业盛典',
+                category: '开业庆典',
+                description: '大型商业综合体开幕庆典活动',
+                image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800'
+            },
+            {
+                id: 4,
+                title: '企业年会',
+                category: '年会',
+                description: '年度企业盛典与团队表彰大会',
+                image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800'
+            }
+        ];
+
+        // 从 GitHub 加载案例数据
+        async function loadCases() {
+            try {
+                const response = await fetch(`https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${GITHUB_CONFIG.dataPath}`);
+                if (response.ok) {
+                    const cases = await response.json();
+                    renderCases(cases);
+                } else {
+                    renderCases(defaultCases);
+                }
+            } catch (error) {
+                console.log('使用默认案例数据');
+                renderCases(defaultCases);
+            }
+        }
+
+        // 渲染案例
+        function renderCases(cases) {
+            const container = document.getElementById('cases-container');
+            container.innerHTML = cases.map(caseItem => `
+                <div class="case-card">
+                    <img src="${caseItem.image}" alt="${caseItem.title}" class="case-image" onerror="this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?w=800'">
+                    <div class="case-content">
+                        <span class="case-category">${caseItem.category}</span>
+                        <h3>${caseItem.title}</h3>
+                        <p>${caseItem.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 加载更多案例
+        function loadMoreCases() {
+            alert('更多案例即将上线，敬请期待！');
+        }
+
+        // 表单提交
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                type: formData.get('type'),
+                message: formData.get('message'),
+                date: new Date().toISOString()
+            };
+            
+            // 保存到 localStorage（作为临时存储，后续可改为发送到服务器）
+            let inquiries = JSON.parse(localStorage.getItem('inquiries') || '[]');
+            inquiries.push(data);
+            localStorage.setItem('inquiries', JSON.stringify(inquiries));
+            
+            alert('感谢您的咨询！我们会尽快与您联系。');
+            this.reset();
+        });
+
+        // 导航滚动效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(15, 15, 26, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(15, 15, 26, 0.95)';
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // 页面加载时获取案例
+        loadCases();
+    </script>
+</body>
+</html>
